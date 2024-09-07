@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Biblioteca.Models;
 
 public interface IUserRepository

@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Biblioteca.Models;
 
 public class UserService : IUserService

@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 using Biblioteca.Models;
 
 public class UserBookRepository : IUserBookRepository

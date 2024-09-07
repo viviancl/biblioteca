@@ -1,6 +1,3 @@
-// Services/IUserService.cs
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Biblioteca.Models;
 
 public interface IUserService

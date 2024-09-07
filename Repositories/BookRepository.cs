@@ -1,7 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Biblioteca.Models;
 
 public class BookRepository : IBookRepository
@@ -37,7 +34,6 @@ public class BookRepository : IBookRepository
             .Take(pageSize)
             .ToListAsync();
     }
-
 
     public async Task<(IEnumerable<Book> Books, int TotalCount)> GetBooksIdsAsync(List<int?> bookIds, string? genre, int pageNumber, int pageSize)
     {
