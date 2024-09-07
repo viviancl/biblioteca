@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "3b2ff6a6-ce72-4e12-b0cb-e5949d452416",
+		"name": "InitumS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3612288"
+	},
+	"item": [
+		{
+			"name": "Generar Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"ejemplo\",\r\n  \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5264/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5264",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultaLibrosFiltros",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW5jbCIsImp0aSI6IjQ0NzAyY2VjLTM0ZTUtNGRlOC1hZGU3LTA5ZjIxMjQyNWExYyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImV4cCI6MTcyNTY3MjU4MywiaXNzIjoiaW5pdGl1bSIsImF1ZCI6ImluaXRpdW0ifQ.cnB1gaJgyHaEVOvIvBsDQMQ7dNPMdMODI2qTzoEv0SI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5264/api/books?genre=Terror&pageNumber=1&pageSize=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5264",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Jostein Gaarder",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "Terror"
+						},
+						{
+							"key": "publishedYear",
+							"value": "1991",
+							"disabled": true
+						},
+						{
+							"key": "pageNumber",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultaLibrosFiltros (Registrados por el Usuario)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW5jbCIsImp0aSI6IjFhYWYxNjY0LTA2ZjAtNGI0Zi1iMjY3LWI5MmJiNGQ2Mzc3ZSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImV4cCI6MTcyNTY3ODE3NywiaXNzIjoiaW5pdGl1bSIsImF1ZCI6ImluaXRpdW0ifQ.fMiJEq87CQKc4vwqg7On6unOkw6VImCHgjKHAucCaLM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5264/api/users/vivianCl/books?pageNumber=1&pageSize=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5264",
+					"path": [
+						"api",
+						"users",
+						"vivianCl",
+						"books"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "terror",
+							"disabled": true
+						},
+						{
+							"key": "pageNumber",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Libro por usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW5jbCIsImp0aSI6IjFhYWYxNjY0LTA2ZjAtNGI0Zi1iMjY3LWI5MmJiNGQ2Mzc3ZSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImV4cCI6MTcyNTY3ODE3NywiaXNzIjoiaW5pdGl1bSIsImF1ZCI6ImluaXRpdW0ifQ.fMiJEq87CQKc4vwqg7On6unOkw6VImCHgjKHAucCaLM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"title\": \"Cien Años de Soledad III\",\r\n//   \"author\": \"Gabriel Garcia Marquez\",\r\n//   \"publishedYear\": 1967,\r\n//   \"genre\": \"Fantasía\"\r\n// }\r\n\r\n// {\r\n//   \"title\": \"Divina Comedia III\",\r\n//   \"author\": \"Dante Alighieri\",\r\n//   \"publishedYear\": 1321,\r\n//   \"genre\": \"Fantasía\"\r\n// }\r\n\r\n// {\r\n//   \"title\": \"Orgullo y Prejuicio III\",\r\n//   \"author\": \"Jane Austen\",\r\n//   \"publishedYear\": 1813,\r\n//   \"genre\": \"Fantasía\"\r\n// }\r\n\r\n{\r\n  \"title\": \"Crimen y Castigo IV\",\r\n  \"author\": \"Fiódor Dostoievski\",\r\n  \"publishedYear\": 1866,\r\n  \"genre\": \"Terror\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5264/api/users/1/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5264",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
